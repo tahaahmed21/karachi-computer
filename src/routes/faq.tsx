@@ -3,7 +3,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { PageHeader } from "@/components/site/PageHeader";
 import { seo } from "@/lib/seo";
 
-const faqs = [
+const faqs: [string, string][] = [
   ["Are the prices on the website final?", "Prices shown are placeholder demo values. Please contact the store to confirm current pricing."],
   ["Can I place an order online?", "Not yet — the cart is a preview. Contact us to order the products you've selected."],
   ["Can you help me choose a computer?", "Yes. Send us a message with what you need it for and we'll help you choose."],

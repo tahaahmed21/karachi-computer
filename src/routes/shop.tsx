@@ -9,10 +9,13 @@ import { seo } from "@/lib/seo";
 type Search = { category?: CategoryId; q?: string };
 
 export const Route = createFileRoute("/shop")({
-  validateSearch: (s: Record<string, unknown>): Search => ({
-    category: categoryById(String(s.category ?? "")) ? (s.category as CategoryId) : undefined,
-    q: typeof s.q === "string" && s.q ? s.q : undefined,
-  }),
+  validateSearch: (s: Record<string, unknown>): Search => {
+    const r: Search = {};
+    const c = s["category"], q = s["q"];
+    if (typeof c === "string" && categoryById(c)) r.category = c as CategoryId;
+    if (typeof q === "string" && q) r.q = q;
+    return r;
+  },
   head: () => seo("Shop", "Browse computers, laptops, components, monitors and accessories at Karachi Computers."),
   component: Shop,
 });
