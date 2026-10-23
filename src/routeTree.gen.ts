@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AccessoriesRouteImport } from './routes/accessories'
+import { Route as ComponentsRouteImport } from './routes/components'
+import { Route as DesktopComputersRouteImport } from './routes/desktop-computers'
+import { Route as GamingPcsRouteImport } from './routes/gaming-pcs'
+import { Route as LaptopsRouteImport } from './routes/laptops'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as TermsRouteImport } from './routes/terms'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccessoriesRoute = AccessoriesRouteImport.update({
+  id: '/accessories',
+  path: '/accessories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComponentsRoute = ComponentsRouteImport.update({
+  id: '/components',
+  path: '/components',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DesktopComputersRoute = DesktopComputersRouteImport.update({
+  id: '/desktop-computers',
+  path: '/desktop-computers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GamingPcsRoute = GamingPcsRouteImport.update({
+  id: '/gaming-pcs',
+  path: '/gaming-pcs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LaptopsRoute = LaptopsRouteImport.update({
+  id: '/laptops',
+  path: '/laptops',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/accessories': typeof AccessoriesRoute
+  '/components': typeof ComponentsRoute
+  '/desktop-computers': typeof DesktopComputersRoute
+  '/gaming-pcs': typeof GamingPcsRoute
+  '/laptops': typeof LaptopsRoute
+  '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/accessories': typeof AccessoriesRoute
+  '/components': typeof ComponentsRoute
+  '/desktop-computers': typeof DesktopComputersRoute
+  '/gaming-pcs': typeof GamingPcsRoute
+  '/laptops': typeof LaptopsRoute
+  '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/accessories': typeof AccessoriesRoute
+  '/components': typeof ComponentsRoute
+  '/desktop-computers': typeof DesktopComputersRoute
+  '/gaming-pcs': typeof GamingPcsRoute
+  '/laptops': typeof LaptopsRoute
+  '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/accessories'
+    | '/components'
+    | '/desktop-computers'
+    | '/gaming-pcs'
+    | '/laptops'
+    | '/privacy'
+    | '/terms'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/accessories'
+    | '/components'
+    | '/desktop-computers'
+    | '/gaming-pcs'
+    | '/laptops'
+    | '/privacy'
+    | '/terms'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/accessories'
+    | '/components'
+    | '/desktop-computers'
+    | '/gaming-pcs'
+    | '/laptops'
+    | '/privacy'
+    | '/terms'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AccessoriesRoute: typeof AccessoriesRoute
+  ComponentsRoute: typeof ComponentsRoute
+  DesktopComputersRoute: typeof DesktopComputersRoute
+  GamingPcsRoute: typeof GamingPcsRoute
+  LaptopsRoute: typeof LaptopsRoute
+  PrivacyRoute: typeof PrivacyRoute
+  TermsRoute: typeof TermsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/accessories': {
+      id: '/accessories'
+      path: '/accessories'
+      fullPath: '/accessories'
+      preLoaderRoute: typeof AccessoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/components': {
+      id: '/components'
+      path: '/components'
+      fullPath: '/components'
+      preLoaderRoute: typeof ComponentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/desktop-computers': {
+      id: '/desktop-computers'
+      path: '/desktop-computers'
+      fullPath: '/desktop-computers'
+      preLoaderRoute: typeof DesktopComputersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gaming-pcs': {
+      id: '/gaming-pcs'
+      path: '/gaming-pcs'
+      fullPath: '/gaming-pcs'
+      preLoaderRoute: typeof GamingPcsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/laptops': {
+      id: '/laptops'
+      path: '/laptops'
+      fullPath: '/laptops'
+      preLoaderRoute: typeof LaptopsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AccessoriesRoute: AccessoriesRoute,
+  ComponentsRoute: ComponentsRoute,
+  DesktopComputersRoute: DesktopComputersRoute,
+  GamingPcsRoute: GamingPcsRoute,
+  LaptopsRoute: LaptopsRoute,
+  PrivacyRoute: PrivacyRoute,
+  TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
