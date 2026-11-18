@@ -22,3 +22,19 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+## Supabase catalog
+
+The storefront reads its catalog from the public `categories` and `products`
+tables. Copy `.env.example` to `.env` and set `VITE_SUPABASE_URL` and
+`VITE_SUPABASE_KEY` to your Supabase project URL and publishable key. Never put
+a Supabase `service_role` key in a `VITE_` variable or browser code.
+
+Apply the SQL in
+[`supabase/migrations/20261119000000_catalog.sql`](./supabase/migrations/20261119000000_catalog.sql)
+in the Supabase SQL Editor. It creates the tables, indexes, public read-only
+Row Level Security policies, and starter catalog rows. The app maps those
+rows through `src/lib/catalog-api.ts`; if Supabase is not configured or a
+request fails, it reports the error and keeps the bundled demo catalog
+available. Provide public image URLs in `categories.image_url` and
+`products.image_urls` to use uploaded product images.
